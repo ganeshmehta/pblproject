@@ -1,0 +1,257 @@
+/********************* Imports *********************/
+@-ms-viewport {
+    width: device-width;
+  } /* IE support */
+  
+  /********************* Page Setup *********************/
+  html {
+    box-sizing: border-box;
+    height: 100%;
+  }
+  /* includes border and padding into width of element */
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #eaeaea;
+    color: #370311;
+    font-family: "century gothic", sans-serif;
+    line-height: 1.33;
+    margin: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  p {
+    font-size: 18px;
+    margin: 20px 0px;
+  }
+  a {
+    color: #370311;
+    font-size: 14px;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  a:hover {
+    color: #1ca8de;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 30px;
+    letter-spacing: 0.25em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  h3,
+  article.quote p {
+    font-size: 36px;
+    font-weight: 400;
+    margin: 10px 0;
+  }
+  main {
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-width: 320px;
+    position: relative;
+    width: 100%;
+  }
+  .chocolateBar {
+    left: -65%;
+    position: absolute;
+    top: -125px;
+    width: 80%;
+  }
+  .chocolateKisses {
+    bottom: -125px;
+    position: absolute;
+    right: -18%;
+    width: 39%;
+  }
+  
+  /********************* Page Content *********************/
+  .contentWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px 0 200px;
+  }
+  .contentWrapper article {
+    display: flex;
+    flex: 1 50%;
+    flex-direction: column;
+    height: 600px;
+    min-width: 50%;
+    max-width: 50%;
+  }
+  .contentWrapper article > div {
+    margin: 30px;
+    max-width: 400px;
+  }
+  
+  /*** Text Panels ***/
+  .contentWrapper article.quote {
+    align-items: center;
+    justify-content: center;
+  }
+  svg.is,
+  svg.ia {
+    fill: #1ca8de;
+    height: auto;
+    margin-bottom: 20px;
+    width: 48px;
+  }
+  
+  /*** Image Panels ***/
+  article.imageBackground {
+    background: #370311 no-repeat center;
+    background-size: cover;
+    color: #fff;
+    justify-content: flex-end;
+    padding: 45px 60px;
+  }
+  article.imageBackground h2 {
+    font-size: 11px;
+  }
+  article.imageBackground a,
+  article.imageBackground p {
+    color: #fff;
+    display: none;
+  }
+  article.imageBackground a:hover {
+    color: #1ca8de;
+  }
+  .imageBackground.fs {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url("http://www.smattox.com/assets/images/r2i/image1.jpg");
+  }
+  .imageBackground.ir {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url("http://www.smattox.com/assets/images/r2i/image2.jpg");
+  }
+  
+  /*** Image Panels: Hover ***/
+  article.imageBackground:hover {
+    cursor: pointer;
+  }
+  article.imageBackground:hover a,
+  article.imageBackground:hover p {
+    display: inline-block;
+  }
+  .imageBackground.fs:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+      url("http://www.smattox.com/assets/images/r2i/image1.jpg");
+  }
+  .imageBackground.ir:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+      url("http://www.smattox.com/assets/images/r2i/image2.jpg");
+  }
+  
+  /********************* Media Queries *********************/
+  @media only screen and (max-width: 1300px) {
+    p {
+      font-size: 14px;
+    }
+    h2 {
+      font-size: 14px;
+    }
+    h3,
+    article.quote p {
+      font-size: 28px;
+    }
+    main {
+      margin: 0 5%;
+      width: 90%;
+      min-width: 90%;
+    }
+    .contentWrapper article {
+      height: auto;
+    }
+    .contentWrapper article.quote {
+      margin-top: 100px;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    h3,
+    article.quote p {
+      font-size: 24px;
+    }
+    .chocolateBar {
+      left: -60%;
+      top: -105px;
+    }
+    .chocolateKisses {
+      right: -38%;
+      width: 60%;
+    }
+    article.imageBackground {
+      padding: 0px;
+    }
+  }
+  @media only screen and (max-width: 680px) {
+    .chocolateBar {
+      left: -55%;
+      top: -95px;
+    }
+    .chocolateKisses {
+      right: -45%;
+      width: 80%;
+    }
+    .contentWrapper {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      margin: 100px 0px;
+    }
+    .contentWrapper article {
+      flex: 1 100%;
+      min-width: 100%;
+      max-width: 100%;
+    }
+    .contentWrapper article.quote {
+      margin-top: 0px;
+    }
+    article.imageBackground + article.imageBackground {
+      order: 2;
+    }
+    .contentWrapper article.imageBackground > div {
+      display: flex;
+      flex-direction: column;
+      height: 450px;
+      justify-content: flex-end;
+    }
+    .contentWrapper article.imageBackground a,
+    .contentWrapper article.imageBackground p {
+      display: inline-block;
+    }
+    .imageBackground.fs {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("http://www.smattox.com/assets/images/r2i/image1.jpg");
+    }
+    .imageBackground.ir {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("http://www.smattox.com/assets/images/r2i/image2.jpg");
+    }
+  }
+  @media only screen and (max-width: 450px) {
+    .chocolateBar {
+      top: -125px;
+      width: 100%;
+    }
+    .chocolateKisses {
+      display: none;
+    }
+    .contentWrapper {
+      margin: 50px 0 100px;
+    }
+  }
+  
